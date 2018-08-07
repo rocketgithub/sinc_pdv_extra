@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+import time
 
 class Location(models.Model):
     _inherit = "stock.location"
@@ -31,6 +32,7 @@ class PosConfig(models.Model):
     _inherit = "pos.config"
 
     sinc_id = fields.Integer('Sinc ID')
+    sinc_date = fields.Datetime('Sinc date', default=time.strftime('%Y-%m-%d %H:%m:%s'))
 
 class Users(models.Model):
     _inherit = "res.users"
