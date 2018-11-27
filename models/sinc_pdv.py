@@ -13,6 +13,11 @@ class pos_sat_resolucion(models.Model):
 
     sinc_id = fields.Integer('Sinc ID')
 
+class Partner(models.Model):
+    _inherit = "res.partner"
+
+    sinc_id = fields.Integer('Sinc ID')
+
 class AccountJournal(models.Model):
     _inherit = "account.journal"
 
@@ -28,6 +33,11 @@ class ProductCategory(models.Model):
 
     sinc_id = fields.Integer('Sinc ID')
 
+class Pricelist(models.Model):
+    _inherit = "product.pricelist"
+
+    sinc_id = fields.Integer('Sinc ID')
+
 class PosConfig(models.Model):
     _inherit = "pos.config"
 
@@ -36,6 +46,16 @@ class PosConfig(models.Model):
 
 class Users(models.Model):
     _inherit = "res.users"
+
+    sinc_id = fields.Integer('Sinc ID')
+    
+class ProductUoMCategory(models.Model):
+    _inherit = "product.uom.categ"
+
+    sinc_id = fields.Integer('Sinc ID')
+    
+class ProductUoM(models.Model):
+    _inherit = "product.uom"
 
     sinc_id = fields.Integer('Sinc ID')
 
